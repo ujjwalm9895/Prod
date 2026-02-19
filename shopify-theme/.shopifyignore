@@ -1,0 +1,6 @@
+# Files to ignore when pushing to Shopify
+.git/
+.gitignore
+README.md
+*.md
+.shopifyignore

@@ -37,7 +37,7 @@
             {% endif %}
           </div>
           
-          <form action="/cart/add" method="post" enctype="multipart/form-data" id="quick-buy-form">
+          <form action="{{ routes.cart_add_url }}" method="post" enctype="multipart/form-data" id="quick-buy-form">
             <input type="hidden" name="id" id="selected-variant-id" value="{{ featured_product.selected_or_first_available_variant.id }}">
             
             {% if featured_product.options_with_values.size > 0 %}
