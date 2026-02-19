@@ -1,0 +1,15 @@
+SAVE YOUR R2F LOGO HERE
+========================
+
+Please save your R2F logo image in this folder with the name:
+- r2f-logo.png
+
+The logo should be:
+- Format: PNG (with transparent background preferred)
+- Size: 200x200px or larger
+- Name: r2f-logo.png
+
+Once saved, the logo will automatically appear across all pages of the website!
+
+The website is already configured to use: images/r2f-logo.png
+

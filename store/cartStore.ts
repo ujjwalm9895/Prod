@@ -105,6 +105,12 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: "r2f-cart-storage",
+      skipHydration: true,
     }
   )
 )
+
+// Hydrate store only on client-side to prevent hydration errors
+if (typeof window !== 'undefined') {
+  useCartStore.persist.rehydrate()
+}

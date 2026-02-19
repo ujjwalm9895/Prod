@@ -1,0 +1,247 @@
+{% comment %}
+  Brand Story Section
+  Converts: components/home/BrandStory.tsx
+{% endcomment %}
+
+<section class="brand-story">
+  <div class="container">
+    <div class="brand-story-grid">
+      <div class="brand-story-content">
+        {% if section.settings.subheading != blank %}
+          <p class="brand-story-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+        
+        {% if section.settings.title != blank %}
+          <h2 class="brand-story-title">{{ section.settings.title }}</h2>
+        {% endif %}
+        
+        {% if section.settings.text != blank %}
+          <div class="brand-story-text">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+        
+        {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn btn-primary">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+      
+      <div class="brand-story-media">
+        {% if section.settings.image %}
+          <img 
+            src="{{ section.settings.image | image_url: width: 800 }}" 
+            alt="{{ section.settings.image.alt | default: section.settings.title }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .brand-story {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #f8f8f8;
+    padding: 0;
+    margin: 0;
+    min-height: 400px;
+  }
+  .brand-story .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  .brand-story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    .brand-story-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+  }
+  .brand-story-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  .brand-story-media {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .brand-story-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .brand-story-subheading {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #C49A6C;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .brand-story-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+  @media (min-width: 768px) {
+    .brand-story-title {
+      font-size: 2.5rem;
+    }
+  }
+  .brand-story-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .brand-story-text p {
+    margin-bottom: 1rem;
+  }
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: #C9A24D;
+    color: #000;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: #b8923d;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 1024px) {
+    .brand-story {
+      padding: 3rem 0;
+    }
+    .brand-story-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .brand-story-content {
+      order: 1;
+      text-align: center;
+      padding: 0 1rem;
+    }
+    .brand-story-media {
+      order: 2;
+    }
+    .brand-story-subheading {
+      font-size: clamp(0.8rem, 2vw, 0.875rem);
+    }
+    .brand-story-title {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 1rem;
+    }
+    .brand-story-text {
+      font-size: clamp(0.95rem, 2.5vw, 1rem);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .brand-story-text p {
+      margin-bottom: 1rem;
+    }
+    .brand-story-content .btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 0.875rem 1.5rem;
+      font-size: clamp(0.95rem, 2.5vw, 1rem);
+      min-height: 48px;
+    }
+  }
+  @media (max-width: 480px) {
+    .brand-story {
+      padding: 2rem 0;
+    }
+    .brand-story-content {
+      padding: 0 0.75rem;
+    }
+    .brand-story-title {
+      font-size: clamp(1.35rem, 6vw, 1.75rem);
+    }
+    .brand-story-text {
+      font-size: clamp(0.9rem, 2.3vw, 0.95rem);
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand Story",
+  "tag": "section",
+  "class": "brand-story-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Built for the Perfect Fit"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "default": "<p>R2F is built to give Indian men the perfect fit they've been missing — premium trousers engineered for comfort, movement & all-day performance.</p><p>Whether you're heading to the office, traveling, or attending important meetings, our MotionFit™ technology ensures you look sharp and feel comfortable all day long.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Story"
+    }
+  ]
+}
+{% endschema %}

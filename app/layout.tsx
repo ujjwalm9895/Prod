@@ -25,6 +25,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={jost.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="/assets/style.css" />
+        <link rel="stylesheet" href="/assets/benefits-modern.css" />
+        <link rel="stylesheet" href="/assets/size-guide-cta.css" />
+        <link rel="stylesheet" href="/assets/footer-compact.css" />
+        <link rel="stylesheet" href="/assets/footer-collapsible.css" />
+        <link rel="stylesheet" href="/assets/mobile-menu-enhanced.css" />
+        <link rel="stylesheet" href="/assets/premium-enhancements.css" />
+        <link rel="stylesheet" href="/assets/collection.css" />
+        <link rel="stylesheet" href="/assets/mobile.css" />
+      </head>
       <body className="antialiased">{children}</body>
     </html>
   )

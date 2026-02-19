@@ -1,0 +1,300 @@
+{% comment %}
+  Product Highlights Section
+  Converts: components/home/ProductHighlights.tsx
+{% endcomment %}
+
+<section class="product-highlights" id="product-highlights-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ section.settings.title | default: "Most Trending Products" }}</h2>
+      {% if section.settings.description != blank %}
+        <p class="section-description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    
+    {% assign featured_product = section.settings.product %}
+    
+    {% if featured_product %}
+      <div class="quick-buy-panel">
+        <div class="quick-buy-media">
+          <img 
+            id="quick-buy-product-image"
+            src="{{ featured_product.featured_image | image_url: width: 800 }}" 
+            alt="{{ featured_product.title }}"
+            loading="lazy"
+          >
+        </div>
+        
+        <div class="quick-buy-content">
+          <h3 class="product-title">{{ featured_product.title }}</h3>
+          
+          <div class="product-price">
+            <span class="current-price">{{ featured_product.price | money }}</span>
+            {% if featured_product.compare_at_price > featured_product.price %}
+              <span class="compare-price">{{ featured_product.compare_at_price | money }}</span>
+            {% endif %}
+          </div>
+          
+          <form action="/cart/add" method="post" enctype="multipart/form-data" id="quick-buy-form">
+            <input type="hidden" name="id" id="selected-variant-id" value="{{ featured_product.selected_or_first_available_variant.id }}">
+            
+            {% if featured_product.options_with_values.size > 0 %}
+              {% for option in featured_product.options_with_values %}
+                <div class="product-option">
+                  <label class="option-label">{{ option.name }}</label>
+                  
+                  {% if option.name == 'Color' %}
+                    <div class="color-swatches">
+                      {% for value in option.values %}
+                        <button 
+                          type="button"
+                          class="color-swatch {% if forloop.first %}active{% endif %}"
+                          data-color="{{ value }}"
+                          data-option-name="{{ option.name }}"
+                          data-option-value="{{ value }}"
+                          style="background-color: {{ value | downcase | replace: ' ', '-' }}"
+                        >
+                          <span class="sr-only">{{ value }}</span>
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <div class="size-options">
+                      {% for value in option.values %}
+                        <button 
+                          type="button"
+                          class="size-option {% if forloop.first %}active{% endif %}"
+                          data-option-name="{{ option.name }}"
+                          data-option-value="{{ value }}"
+                        >
+                          {{ value }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            {% endif %}
+            
+            <div class="quick-buy-actions">
+              <button type="submit" class="btn btn-primary" id="add-to-cart-btn">
+                Add to Cart
+              </button>
+            </div>
+            
+            <div class="quick-buy-availability" id="availability-message">
+              <span class="availability-text">In Stock</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    {% else %}
+      <p>Please select a product in theme settings.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .product-highlights {
+    position: relative;
+    z-index: 10;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    min-height: 600px;
+    width: 100%;
+    background: linear-gradient(135deg, #0F0F0F, #3A3A3A, #C9A24D);
+    padding: 0;
+    margin: 0;
+  }
+  .product-highlights .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .section-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .section-description {
+    color: #e5e7eb;
+    font-size: 1rem;
+  }
+  .quick-buy-panel {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid rgba(201, 162, 77, 0.3);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px -12px rgba(0,0,0,0.6);
+    align-items: center;
+    background: linear-gradient(135deg, #0F0F0F, #3A3A3A, #C9A24D);
+  }
+  .quick-buy-media {
+    width: 100%;
+    max-height: 320px;
+    display: block;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .quick-buy-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .quick-buy-content {
+    display: grid;
+    gap: 1rem;
+  }
+  .product-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .product-price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .current-price {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .compare-price {
+    color: #999;
+    text-decoration: line-through;
+  }
+  .color-swatches {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .color-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .color-swatch.active {
+    border-color: #C9A24D;
+  }
+  .size-options {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .size-option {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .size-option.active {
+    background: #C9A24D;
+    border-color: #C9A24D;
+  }
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-primary {
+    background: #C9A24D;
+    color: #000;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: #b8923d;
+  }
+</style>
+
+<script>
+  // Handle variant selection
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('quick-buy-form');
+    const colorSwatches = document.querySelectorAll('.color-swatch');
+    const sizeOptions = document.querySelectorAll('.size-option');
+    const variantIdInput = document.getElementById('selected-variant-id');
+    const productImage = document.getElementById('quick-buy-product-image');
+    
+    // Color selection
+    colorSwatches.forEach(swatch => {
+      swatch.addEventListener('click', function() {
+        colorSwatches.forEach(s => s.classList.remove('active'));
+        this.classList.add('active');
+        updateVariant();
+      });
+    });
+    
+    // Size selection
+    sizeOptions.forEach(option => {
+      option.addEventListener('click', function() {
+        const optionName = this.dataset.optionName;
+        sizeOptions.forEach(o => {
+          if (o.dataset.optionName === optionName) {
+            o.classList.remove('active');
+          }
+        });
+        this.classList.add('active');
+        updateVariant();
+      });
+    });
+    
+    function updateVariant() {
+      const selectedColor = document.querySelector('.color-swatch.active')?.dataset.optionValue;
+      const selectedSize = document.querySelector('.size-option.active')?.dataset.optionValue;
+      
+      // Update variant ID based on selections
+      // This would need to match your Shopify variant structure
+      // For now, using the first available variant
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Highlights",
+  "tag": "section",
+  "class": "product-highlights-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Most Trending Products"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "What others are buying"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Featured Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Highlights"
+    }
+  ]
+}
+{% endschema %}

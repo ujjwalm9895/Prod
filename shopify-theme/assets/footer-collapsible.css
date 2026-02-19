@@ -1,0 +1,165 @@
+/* ============================================
+   Footer Collapsible Dropdown Styles
+   ============================================ */
+
+/* Footer Toggle Button */
+.footer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-base);
+  padding: var(--spacing-sm) 0;
+  position: relative;
+}
+
+.footer-toggle:hover {
+  color: var(--color-gold);
+}
+
+.footer-toggle span {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Toggle Icon */
+.footer-toggle-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-white);
+  transition: transform var(--transition-base);
+  flex-shrink: 0;
+}
+
+.footer-collapsible.active .footer-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.footer-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.footer-collapsible.active .footer-dropdown {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: var(--spacing-md);
+}
+
+/* Desktop - Always Show */
+@media (min-width: 1024px) {
+  .footer-toggle {
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  .footer-toggle-icon {
+    display: none;
+  }
+  
+  .footer-dropdown {
+    max-height: none !important;
+    opacity: 1 !important;
+    margin-top: var(--spacing-md) !important;
+    overflow: visible;
+  }
+  
+  .footer-toggle:hover {
+    color: var(--color-white);
+  }
+}
+
+/* Mobile - Collapsible with Border */
+@media (max-width: 1023px) {
+  .footer-collapsible {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--spacing-md);
+  }
+  
+  .footer-collapsible:last-child {
+    border-bottom: none;
+  }
+  
+  .footer-toggle {
+    padding: var(--spacing-md) 0;
+  }
+  
+  .footer-toggle span {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet - Show Icon but Larger Touch Target */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .footer-toggle {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+  
+  .footer-toggle span {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for Links */
+.footer-dropdown li {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.footer-collapsible.active .footer-dropdown li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-collapsible.active .footer-dropdown li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.footer-collapsible.active .footer-dropdown li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.footer-collapsible.active .footer-dropdown li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.footer-collapsible.active .footer-dropdown li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.footer-collapsible.active .footer-dropdown li:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+/* Desktop - Remove Animations */
+@media (min-width: 1024px) {
+  .footer-dropdown li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effect on Toggle */
+@media (max-width: 1023px) {
+  .footer-toggle:active {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+/* Plus Icon Alternative (if you want + instead of arrow) */
+.footer-toggle-icon.plus-icon {
+  transition: transform var(--transition-base);
+}
+
+.footer-collapsible.active .footer-toggle-icon.plus-icon {
+  transform: rotate(45deg);
+}
+

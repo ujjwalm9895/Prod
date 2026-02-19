@@ -1,138 +1,304 @@
-# R2F - Right2Fit E-Commerce Website
+# R2F - Right2Fit Shopify Theme
 
-A modern, high-performance e-commerce website built with Next.js 14, React, and TypeScript.
+A modern, high-performance Shopify theme built with Liquid templates for R2F - Right2Fit e-commerce store.
 
-## 🏗️ Project Structure
+## 🎯 Project Overview
 
-```
-r2f-ecommerce/
-├── app/                          # Next.js App Router
-│   ├── (routes)/                # Route groups
-│   │   ├── about/               # About page
-│   │   ├── contact/             # Contact page
-│   │   ├── products/            # Product pages
-│   │   └── ...                  # Other pages
-│   ├── api/                     # API routes
-│   ├── layout.tsx               # Root layout
-│   └── page.tsx                  # Homepage
-│
-├── components/                   # React components
-│   ├── ui/                      # Reusable UI components (Shadcn)
-│   ├── layout/                  # Layout components (Header, Footer)
-│   ├── product/                 # Product-related components
-│   ├── cart/                    # Cart components
-│   ├── checkout/                # Checkout components
-│   ├── home/                    # Homepage components
-│   └── shared/                  # Shared components
-│
-├── lib/                         # Utilities & helpers
-│   ├── utils/                   # Utility functions
-│   └── api/                     # API clients
-│
-├── hooks/                       # Custom React hooks
-│   ├── useCart.ts               # Cart management hook
-│   └── index.ts                 # Barrel export
-│
-├── store/                       # Zustand stores
-│   ├── cartStore.ts             # Cart state management
-│   └── uiStore.ts               # UI state management
-│
-├── types/                       # TypeScript types
-│   └── index.ts                 # Type definitions
-│
-├── styles/                      # Global styles
-│   └── globals.css              # Global CSS & Tailwind
-│
-└── public/                      # Static assets
-    └── images/                  # Image files
-```
+This is a **Shopify Theme** project that will be deployed directly to your Shopify store:
+- **Framework:** Shopify Liquid Templates
+- **Hosting:** Shopify (fully hosted)
+- **Deployment:** GitHub → Shopify (automatic)
+- **Products:** Managed in Shopify Admin
 
-## 📋 Naming Conventions
-
-### Files & Folders
-- **Components:** PascalCase (e.g., `ProductCard.tsx`)
-- **Hooks:** camelCase starting with `use` (e.g., `useCart.ts`)
-- **Utilities:** camelCase (e.g., `formatPrice.ts`)
-- **Types:** PascalCase (e.g., `Product.ts`)
-- **Stores:** camelCase ending with `Store` (e.g., `cartStore.ts`)
-- **Folders:** lowercase with hyphens (e.g., `size-guide/`)
-
-### Code
-- **Components:** PascalCase (e.g., `export function ProductCard()`)
-- **Functions:** camelCase (e.g., `function formatPrice()`)
-- **Variables:** camelCase (e.g., `const productPrice`)
-- **Constants:** UPPER_SNAKE_CASE (e.g., `const MAX_QUANTITY`)
-- **Types/Interfaces:** PascalCase (e.g., `interface Product`)
+---
 
 ## 🚀 Quick Start
 
-1. **Install dependencies:**
+### Prerequisites
+
+- Node.js 18+ (for Shopify CLI)
+- GitHub account
+- **Shopify store** (create at [shopify.com](https://www.shopify.com))
+- Shopify CLI installed
+
+### Step 1: Install Shopify CLI
+
 ```bash
-npm install
+npm install -g @shopify/cli @shopify/theme
 ```
 
-2. **Set up environment variables:**
+### Step 2: Authenticate with Shopify
+
 ```bash
-cp .env.example .env.local
+shopify auth login
 ```
 
-3. **Run development server:**
+### Step 3: Initialize Theme
+
 ```bash
-npm run dev
+# Navigate to project directory
+cd "d:\Cycle 2\Cycle 2\Prod"
+
+# Create theme directory
+mkdir shopify-theme
+cd shopify-theme
+
+# Initialize Shopify theme
+shopify theme init
 ```
 
-4. **Open browser:**
+### Step 4: Copy Theme Files
+
+Copy the converted Liquid files from `shopify-theme-examples/` to your theme directory.
+
+### Step 5: Test Locally
+
+```bash
+shopify theme dev
 ```
-http://localhost:3000
-```
 
-## 📦 Key Dependencies
-
-- **Next.js 14** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Zustand** - State management
-- **React Hook Form** - Form handling
-- **Framer Motion** - Animations
-- **Lucide React** - Icons
-
-## 🎯 Features
-
-- ✅ Modular component architecture
-- ✅ Type-safe with TypeScript
-- ✅ Responsive design
-- ✅ State management with Zustand
-- ✅ Form handling with React Hook Form
-- ✅ Animations with Framer Motion
-- ✅ SEO optimized
-- ✅ Performance optimized
+---
 
 ## 📚 Documentation
 
-- See `DEPENDENCIES.md` for detailed dependency explanations
-- See `PROJECT_STRUCTURE.md` for folder organization details
-- See `QUICK_START.md` for getting started guide
+| Document | Purpose |
+|----------|---------|
+| **[SHOPIFY_THEME_CONVERSION.md](./SHOPIFY_THEME_CONVERSION.md)** | Complete conversion guide (Next.js → Shopify Theme) |
+| **[THEME_MIGRATION_START.md](./THEME_MIGRATION_START.md)** | Quick start guide for conversion |
+| **[SHOPIFY_SETUP.md](./SHOPIFY_SETUP.md)** | Shopify store setup guide |
+| **[GITHUB_SETUP.md](./GITHUB_SETUP.md)** | GitHub deployment setup |
 
-## 🛠️ Available Scripts
+---
 
+## 🚀 Deployment via GitHub
+
+### Step 1: Set Up GitHub Repository
+
+See **[GITHUB_SETUP.md](./GITHUB_SETUP.md)** for complete GitHub setup instructions.
+
+**Quick Steps:**
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript type checking
-npm run format       # Format code with Prettier
+git init
+git add .
+
+
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/r2f-shopify-theme.git
+git push -u origin main
 ```
 
-## 📝 Notes
+### Step 2: Connect GitHub to Shopify
 
-- All components use TypeScript for type safety
-- Components are organized by feature/domain
-- Use barrel exports (`index.ts`) for clean imports
-- Follow the naming conventions above
-- Keep components small and focused
-- Use custom hooks for reusable logic
+1. Go to Shopify Admin → **Online Store** → **Themes**
+2. Click **"Add theme"** → **"Connect from GitHub"**
+3. Authorize Shopify to access GitHub
+4. Select repository: `r2f-shopify-theme`
+5. Select branch: `main`
+6. Click **"Connect theme"**
+
+### Step 3: Enable Auto-Deploy
+
+1. In theme settings, enable **"Auto-deploy from GitHub"**
+2. Select branch: `main`
+3. Save
+
+### Step 4: Push Changes
+
+```bash
+git add .
+git commit -m "Update theme"
+git push origin main
+```
+
+Changes will automatically deploy to Shopify!
+
+---
+
+## 📁 Project Structure
+
+```
+r2f-shopify-theme/
+├── assets/              # CSS, JS, images
+│   └── product/        # Product images
+├── config/              # Theme settings
+│   └── settings_schema.json
+├── layout/              # Layout templates
+│   └── theme.liquid     # Main layout
+├── locales/             # Translations
+├── sections/            # Reusable sections
+│   ├── hero-slider.liquid
+│   ├── product-highlights.liquid
+│   └── brand-story.liquid
+├── snippets/            # Reusable snippets
+│   ├── header.liquid
+│   └── footer.liquid
+└── templates/          # Page templates
+    ├── index.liquid     # Homepage
+    ├── product.liquid   # Product page
+    └── collection.liquid # Collection page
+```
+
+---
+
+## 🛠️ Development Workflow
+
+### Local Development
+
+```bash
+# Start local development server
+shopify theme dev
+```
+
+This will:
+- Start a local preview server
+- Sync changes to Shopify
+- Show preview URL
+
+### Making Changes
+
+1. **Edit Liquid files** in your theme directory
+2. **Changes auto-sync** to Shopify (if `shopify theme dev` is running)
+3. **Preview changes** in the preview URL
+4. **Commit and push** to GitHub when ready
+
+### Deploying to Production
+
+**Option 1: Via GitHub (Recommended)**
+```bash
+git add .
+git commit -m "Your changes"
+git push origin main
+# Auto-deploys if auto-deploy is enabled
+```
+
+**Option 2: Direct Push**
+```bash
+shopify theme push
+shopify theme publish
+```
+
+---
+
+## 📦 Theme Sections
+
+### Available Sections
+
+- **Hero Slider** (`sections/hero-slider.liquid`)
+  - Configurable slides with images, titles, and CTAs
+  - Editable in Shopify theme editor
+
+- **Product Highlights** (`sections/product-highlights.liquid`)
+  - Featured product display
+  - Color and size selection
+  - Add to cart functionality
+
+- **Brand Story** (`sections/brand-story.liquid`)
+  - Brand story content
+  - Image and text layout
+  - Responsive grid
+
+### Adding Sections to Pages
+
+In Shopify Admin:
+1. Go to **Online Store** → **Themes** → **Customize**
+2. Click **"Add section"**
+3. Select section (e.g., "Hero Slider")
+4. Configure settings
+5. Save
+
+---
+
+## 🎨 Customization
+
+### Theme Settings
+
+Edit `config/settings_schema.json` to add theme settings:
+
+```json
+{
+  "name": "Theme Settings",
+  "settings": [
+    {
+      "type": "text",
+      "id": "store_name",
+      "label": "Store Name",
+      "default": "R2F - Right2Fit"
+    }
+  ]
+}
+```
+
+### Using Settings in Theme
+
+```liquid
+{{ settings.store_name }}
+```
+
+---
+
+## ✅ Pre-Launch Checklist
+
+- [ ] Shopify store created
+- [ ] Products added to Shopify
+- [ ] Product images uploaded
+- [ ] Theme files converted and tested
+- [ ] GitHub repository created
+- [ ] Theme connected to GitHub
+- [ ] Auto-deploy enabled
+- [ ] All sections working
+- [ ] Mobile responsive verified
+- [ ] Cart and checkout tested
+- [ ] Theme published
+
+---
+
+## 🐛 Troubleshooting
+
+### Theme Not Syncing
+
+```bash
+# Re-authenticate
+shopify auth logout
+shopify auth login
+
+# Restart dev server
+shopify theme dev
+```
+
+### GitHub Connection Issues
+
+1. Verify GitHub repository is accessible
+2. Check branch name matches (`main`)
+3. Ensure auto-deploy is enabled in Shopify
+4. Check GitHub permissions in Shopify
+
+### Build Errors
+
+1. Check Liquid syntax
+2. Verify all assets exist
+3. Check browser console for errors
+4. Review Shopify theme inspector
+
+---
+
+## 📞 Support
+
+- **Email:** r2f.helpdesk@gmail.com
+- **WhatsApp:** +91 94629 68539
+- **Shopify Docs:** [shopify.dev/docs/themes](https://shopify.dev/docs/themes)
+
+---
+
+## 🎯 Next Steps
+
+1. ✅ Follow **[THEME_MIGRATION_START.md](./THEME_MIGRATION_START.md)** to convert components
+2. ✅ Read **[SHOPIFY_THEME_CONVERSION.md](./SHOPIFY_THEME_CONVERSION.md)** for detailed conversion guide
+3. ✅ Set up GitHub deployment (see **[GITHUB_SETUP.md](./GITHUB_SETUP.md)**)
+4. ✅ Connect theme to Shopify
+5. ✅ Test and deploy!
 
 ---
 
 **Built with ❤️ for R2F - Right2Fit**
+
+*Powered by Shopify Liquid Templates*

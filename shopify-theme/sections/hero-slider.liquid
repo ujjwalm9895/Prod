@@ -1,0 +1,211 @@
+{% comment %}
+  Hero Slider Section
+  Converts: components/home/HeroSlider.tsx
+{% endcomment %}
+
+<section class="hero-section">
+  <div class="hero-slider swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="hero-slide swiper-slide">
+          <div class="hero-media">
+            {% if block.settings.image %}
+              <img 
+                src="{{ block.settings.image | image_url: width: 1920 }}" 
+                alt="{{ block.settings.image.alt | default: block.settings.title }}"
+                class="hero-image"
+                loading="lazy"
+              >
+            {% endif %}
+            <div class="hero-overlay"></div>
+          </div>
+          
+          <div class="hero-content">
+            <div class="container">
+              <div class="hero-text">
+                {% if block.settings.title != blank %}
+                  <h1 class="hero-title">{{ block.settings.title }}</h1>
+                {% endif %}
+                {% if block.settings.subtitle != blank %}
+                  <p class="hero-subtitle">{{ block.settings.subtitle }}</p>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <p class="hero-description">{{ block.settings.description }}</p>
+                {% endif %}
+                
+                <div class="hero-buttons">
+                  {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+                    <a href="{{ block.settings.button_link }}" class="btn btn-primary">
+                      {{ block.settings.button_text }}
+                    </a>
+                  {% endif %}
+                  {% if block.settings.secondary_button_text != blank and block.settings.secondary_button_link != blank %}
+                    <a href="{{ block.settings.secondary_button_link }}" class="btn btn-secondary">
+                      {{ block.settings.secondary_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% if section.blocks.size > 1 %}
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    position: relative;
+    z-index: 0;
+  }
+  .hero-slider {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    position: relative;
+  }
+  .hero-slide {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .hero-image {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    max-height: 90vh;
+    min-width: 100%;
+    display: block;
+  }
+  .hero-media {
+    width: 100%;
+    height: auto;
+    min-height: 80vh;
+    max-height: 90vh;
+    overflow: visible;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-content .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-text {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .hero-buttons {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero Slider",
+  "tag": "section",
+  "class": "hero-slider-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Hero Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Fit Changes Everything"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "MotionFit™ Formal Trouser"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_text",
+          "label": "Secondary Button Text"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_link",
+          "label": "Secondary Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Slider",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
