@@ -2,6 +2,19 @@
 
 Complete guide to set up GitHub repository and connect it to Shopify for automatic theme deployment.
 
+---
+
+## ⚠️ "Branch isn't a valid theme" — read this first
+
+**Shopify only accepts a branch whose root is the theme.** The repo you connect must have `layout/`, `sections/`, `templates/`, `assets/` at the **root** of the branch, not inside a subfolder.
+
+- **Wrong:** Connecting the **Prod** repo (root = Next.js app; theme is in `shopify-theme/`) → "Branch isn't a valid theme".
+- **Right:** Use a **separate** repo that contains only the theme, with theme files at the root. Push from `shopify-theme` (see below) or copy its contents into a new repo. Then connect **that** repo to Shopify.
+
+**Full explanation and fix:** see **BRANCH_NOT_VALID_THEME_FIX.md** in this folder.
+
+---
+
 ## 🎯 Overview
 
 This guide will help you:
@@ -60,13 +73,19 @@ gh repo create r2f-shopify-theme --public --source=. --remote=origin --push
 
 ### Step 3: Connect Local Repository to GitHub
 
-```bash
-# Add remote (replace YOUR_USERNAME with your GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/r2f-shopify-theme.git
+**You must run these commands from inside `shopify-theme`** (so the theme is at the root of what you push):
 
-# Push to GitHub
+```powershell
+cd "d:\Cycle 2\Cycle 2\Prod\shopify-theme"
+
+# Add remote (use your GitHub username; repo name e.g. r2f-shopify-theme)
+git remote add origin https://github.com/ujjwalm9895/r2f-shopify-theme.git
+
+# Push to GitHub — branch root will be layout/, sections/, templates/, etc.
 git push -u origin main
 ```
+
+Then in Shopify, connect **this** repo (r2f-shopify-theme) and branch **main**, not the Prod repo.
 
 ### Step 4: Verify Connection
 

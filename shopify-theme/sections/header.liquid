@@ -8,7 +8,7 @@
     <div class="container">
       <div class="header-content">
         <div class="header-logo">
-          <a href="/" class="logo-link">
+          <a href="{{ routes.root_url }}" class="logo-link">
             {% if settings.logo %}
               <img src="{{ settings.logo | image_url: width: 120 }}" alt="{{ shop.name }}" width="120" height="40">
             {% else %}
@@ -19,15 +19,15 @@
         
         <nav class="header-nav">
           <ul class="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/collections/all">Products</a></li>
-            <li><a href="/pages/about">About</a></li>
-            <li><a href="/pages/contact">Contact</a></li>
+            <li><a href="{{ routes.root_url }}">Home</a></li>
+            <li><a href="{{ routes.all_products_collection_url }}">Products</a></li>
+            <li><a href="{{ routes.root_url }}pages/about">About</a></li>
+            <li><a href="{{ routes.root_url }}pages/contact">Contact</a></li>
           </ul>
         </nav>
         
         <div class="header-actions">
-          <a href="/cart" class="cart-link">
+          <a href="{{ routes.cart_url }}" class="cart-link">
             Cart (<span id="cart-count">{{ cart.item_count }}</span>)
           </a>
         </div>

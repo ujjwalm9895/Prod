@@ -2,6 +2,8 @@
 
 Production-ready Shopify theme for R2F (Right2Fit) e-commerce store.
 
+**For Shopify "Connect from GitHub":** This folder must be the **root** of the GitHub repo (so `layout/`, `sections/`, `templates/` are at the branch root). Do not connect a repo where the theme is in a subfolder — Shopify will show "Branch isn't a valid theme".
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -11,19 +13,42 @@ Production-ready Shopify theme for R2F (Right2Fit) e-commerce store.
 
 ### Setup
 
-1. **Authenticate with Shopify:**
+1. **Find your Shopify store domain:**
+   
+   **If your admin URL looks like:** `https://admin.shopify.com/store/smykaz-yu/`
+   - Your store identifier is `smykaz-yu`
+   - Your store domain is likely: `smykaz-yu.myshopify.com`
+   - **OR** go to **Settings** → **Domains** to see your exact `.myshopify.com` domain
+   
+   **If your admin URL looks like:** `https://your-store.myshopify.com/admin`
+   - Your store domain is: `your-store.myshopify.com`
+   
+   **To verify:** Go to **Settings** → **Domains** in Shopify admin - your `.myshopify.com` domain will be listed there.
+   
+   **Note:** Always use your `.myshopify.com` domain for CLI commands, even if you have a custom domain.
+
+2. **Authenticate with Shopify:**
    ```bash
    shopify auth login
    ```
+   This will prompt you to select your store if you have multiple stores.
 
-2. **Test theme locally:**
+3. **Test theme locally:**
    ```bash
-   shopify theme dev --store=your-store.myshopify.com
+   shopify theme dev --store=smykaz-yu.myshopify.com
    ```
+   **For your store:** Use `smykaz-yu.myshopify.com` (or verify in Settings → Domains)
 
-3. **Push to Shopify:**
+4. **Push to Shopify:**
    ```bash
-   shopify theme push --store=your-store.myshopify.com
+   shopify theme push --store=smykaz-yu.myshopify.com
+   ```
+   **For your store:** Use `smykaz-yu.myshopify.com` (or verify in Settings → Domains)
+   
+   **Tip:** After running `shopify auth login`, you can select your store and skip the `--store` flag:
+   ```bash
+   shopify theme dev
+   shopify theme push
    ```
 
 ## 📁 Theme Structure
@@ -43,26 +68,18 @@ shopify-theme/
 
 ### Initial Setup
 
-1. **Create GitHub Repository:**
+1. **Create a new empty GitHub repository** (theme-only):
    - Go to https://github.com/new
    - Repository name: `r2f-shopify-theme`
-   - Create repository
+   - Do **not** add README or .gitignore — create empty repo
 
-2. **Push to GitHub:**
-   ```bash
-   git add .
-   git commit -m "Initial commit: R2F Shopify Theme"
-   git branch -M main
+2. **Push this folder as the repo root** (run from this directory):
+   ```powershell
    git remote add origin https://github.com/YOUR_USERNAME/r2f-shopify-theme.git
    git push -u origin main
    ```
 
-3. **Connect to Shopify:**
-   - Go to Shopify Admin → **Online Store** → **Themes**
-   - Click **"Add theme"** → **"Connect from GitHub"**
-   - Select repository: `r2f-shopify-theme`
-   - Select branch: `main`
-   - Enable auto-deploy
+3. **In Shopify:** Add theme → Connect from GitHub → choose **r2f-shopify-theme** and branch **main** (not the parent "Prod" repo).
 
 ### Daily Workflow
 
