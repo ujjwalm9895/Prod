@@ -1,0 +1,95 @@
+{% comment %}
+  Footer Section
+  Basic footer for the theme
+{% endcomment %}
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3 class="footer-logo">R2F</h3>
+          <p class="footer-tagline">Perfect Fit Perfect You</p>
+          <p class="footer-description">Premium trousers engineered for Indian men who demand the perfect fit.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Menu</h4>
+          <ul class="footer-links">
+            <li><a href="/collections/all">Products</a></li>
+            <li><a href="/pages/about">About Us</a></li>
+            <li><a href="/pages/contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Policies</h4>
+          <ul class="footer-links">
+            <li><a href="/pages/shipping">Shipping</a></li>
+            <li><a href="/pages/returns">Returns</a></li>
+            <li><a href="/pages/privacy">Privacy Policy</a></li>
+            <li><a href="/pages/terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <p>Support: +91 94629 68539</p>
+          <p>Email: r2f.helpdesk@gmail.com</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/r2fwear/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/r2fwear" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-copyright">© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #1f2937;
+    color: #fff;
+    padding: 3rem 0 1rem;
+  }
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 1rem;
+    text-align: center;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

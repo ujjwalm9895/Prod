@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "hero_slider": {
+      "type": "hero-slider"
+    },
+    "product_highlights": {
+      "type": "product-highlights"
+    },
+    "brand_story": {
+      "type": "brand-story"
+    }
+  },
+  "order": [
+    "hero_slider",
+    "product_highlights",
+    "brand_story"
+  ]
+}
