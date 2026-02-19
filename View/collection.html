@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products | R2F - Right2Fit</title>
+  <meta name="description" content="Browse R2F MotionFit™ trousers. Premium fit, 2-way stretch, sizes 28–36. Free shipping and easy exchange.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/benefits-modern.css">
+  <link rel="stylesheet" href="../assets/size-guide-cta.css">
+  <link rel="stylesheet" href="../assets/footer-compact.css">
+  <link rel="stylesheet" href="../assets/footer-collapsible.css">
+  <link rel="stylesheet" href="../assets/mobile-menu-enhanced.css">
+  <link rel="stylesheet" href="../assets/premium-enhancements.css">
+  <link rel="stylesheet" href="../assets/collection.css">
+  <link rel="stylesheet" href="../assets/mobile.css">
+  <style>
+    /* Announcement strip: full-width horizontal marquee (right to left) */
+    .announcement-strip { width: 100%; overflow: hidden; background: #0a0a0a; white-space: nowrap; position: relative; z-index: 1000; }
+    .announcement-strip__track { display: inline-flex; animation: announcement-marquee 30s linear infinite; animation-iteration-count: infinite; contain: layout; }
+    .announcement-strip__segment { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.5rem; color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; flex-shrink: 0; }
+    .announcement-strip__segment--blue { background: #0a0a0a; }
+    .announcement-strip__segment--black { background: #000; }
+    .announcement-strip__segment--black span { font-weight: 700; }
+    .announcement-strip__segment--emphasis span { font-weight: 700; }
+    .announcement-strip__icon { flex-shrink: 0; color: #facc15; }
+    @keyframes announcement-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  </style>
+</head>
+<body class="page-collection">
+  <!-- Announcement Strip -->
+  <div class="announcement-strip" aria-live="polite">
+    <div class="announcement-strip__track">
+      <div class="announcement-strip__segment announcement-strip__segment--blue">
+        <svg class="announcement-strip__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2L7 10h3v8l4-8h-3V2z"/></svg>
+        <span>₹200 Instant Discount on Prepaid Orders</span>
+      </div>
+      <div class="announcement-strip__segment announcement-strip__segment--black"><span>Free PAN India Shipping</span></div>
+      <div class="announcement-strip__segment announcement-strip__segment--blue announcement-strip__segment--emphasis"><span>Easy Size Exchange</span></div>
+      <div class="announcement-strip__segment announcement-strip__segment--blue">
+        <svg class="announcement-strip__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2L7 10h3v8l4-8h-3V2z"/></svg>
+        <span>₹200 Instant Discount on Prepaid Orders</span>
+      </div>
+      <div class="announcement-strip__segment announcement-strip__segment--black"><span>Free PAN India Shipping</span></div>
+      <div class="announcement-strip__segment announcement-strip__segment--blue announcement-strip__segment--emphasis"><span>Easy Size Exchange</span></div>
+    </div>
+  </div>
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Notification Container -->
+  <div id="notification-container"></div>
+
+  <!-- Quick View Modal -->
+  <div id="quick-view-modal" class="quick-view-modal">
+    <button id="quick-view-close" class="quick-view-close" aria-label="Close quick view">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="quick-view-content">
+      <div id="quick-view-body"></div>
+    </div>
+  </div>
+
+  <header class="site-header sticky-header">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <div class="container">
+        <div class="announcement-slider" aria-live="polite">
+          <div class="announcement-slide">₹200 Instant Discount on Prepaid Orders</div>
+          <div class="announcement-slide">Free PAN India Shipping</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="header-main">
+      <div class="container">
+        <div class="header-content">
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle" aria-label="Open menu">
+            <span class="hamburger">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h10"/>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Logo -->
+          <div class="header-logo">
+            <a href="index.html" class="logo-link">
+              <img src="../assets/r2f-logo.png" alt="R2F - Right2Fit" class="logo-img">
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="header-nav desktop-nav">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="product.html" class="nav-link">MotionFit™</a></li>
+              <li><a href="pages/about.html" class="nav-link">About</a></li>
+              <li><a href="pages/size-guide.html" class="nav-link">Size Guide</a></li>
+              <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Header Actions -->
+          <div class="header-actions">
+            <a href="#" class="header-icon" aria-label="Search">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#" class="header-icon" aria-label="Account">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM3 18a7 7 0 1 1 14 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M1 1h3l2.68 13.39a1 1 0 0 0 1 .81h9.72a1 1 0 0 0 1-.81L20 5H5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="cart-count" data-cart-count>1</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <div class="mobile-nav-tabs">
+          <button class="mobile-nav-tab active" data-tab="menu">MENU</button>
+          <button class="mobile-nav-tab" data-tab="categories">CATEGORIES</button>
+        </div>
+        <button class="mobile-nav-close" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-nav-content">
+
+        <!-- Menu Panel -->
+        <div class="mobile-nav-panel active" data-panel="menu">
+          <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="product.html" class="mobile-nav-link">MotionFit™</a></li>
+            <li class="mobile-nav-item"><a href="pages/about.html" class="mobile-nav-link">About Us</a></li>
+            <li class="mobile-nav-item"><a href="pages/size-guide.html" class="mobile-nav-link">Size Guide</a></li>
+            <li class="mobile-nav-item"><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories Panel -->
+        <div class="mobile-nav-panel" data-panel="categories">
+          <div class="mobile-categories-grid">
+            <a href="product.html" class="mobile-category-product">
+              <div class="mobile-category-product__info">
+                <span class="mobile-category-product__title">MotionFit™ Formal Trouser</span>
+                <span class="mobile-category-product__chevron">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+  </header>
+
+  <main id="main-content">
+    <div class="collection-page">
+      <div class="collection-header">
+        <div class="container">
+          <nav class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>All Trousers</span>
+          </nav>
+      <h1 class="collection-title" data-aos="fade-up">All Products</h1>
+      <p class="collection-count" data-aos="fade-up" data-aos-delay="100">1 product</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="collection-content">
+
+          <button class="mobile-filter-toggle">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M1 4h18M4 10h12M7 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Filters
+          </button>
+
+          <aside class="collection-sidebar">
+            <div class="sidebar-header">
+              <h3 class="sidebar-title">Filters</h3>
+              <button class="sidebar-close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2"/></svg></button>
+            </div>
+            <div class="sidebar-content">
+
+              <div class="filter-group">
+                <h4 class="filter-title">Price</h4>
+                <div class="filter-options">
+                  <label class="filter-option"><input type="checkbox" name="price" value="0-1000"><span>Under ₹1,000</span></label>
+                  <label class="filter-option"><input type="checkbox" name="price" value="1000-2000"><span>₹1,000 - ₹2,000</span></label>
+                  <label class="filter-option"><input type="checkbox" name="price" value="2000-3000"><span>₹2,000 - ₹3,000</span></label>
+                  <label class="filter-option"><input type="checkbox" name="price" value="3000+"><span>Above ₹3,000</span></label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Size</h4>
+                <div class="filter-options filter-size-grid">
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="28"><span>28</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="30"><span>30</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="32"><span>32</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="34"><span>34</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="36"><span>36</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="38"><span>38</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="40"><span>40</span></label>
+                  <label class="filter-size-option"><input type="checkbox" name="size" value="42"><span>42</span></label>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <h4 class="filter-title">Color</h4>
+                <div class="filter-options filter-color-grid">
+                  <label class="filter-color-option" title="Black"><input type="checkbox" name="color" value="black"><span class="color-swatch" style="background-color: black;"></span></label>
+                  <label class="filter-color-option" title="Navy"><input type="checkbox" name="color" value="navy"><span class="color-swatch" style="background-color: navy;"></span></label>
+                  <label class="filter-color-option" title="Grey"><input type="checkbox" name="color" value="grey"><span class="color-swatch" style="background-color: grey;"></span></label>
+                  <label class="filter-color-option" title="Khaki"><input type="checkbox" name="color" value="khaki"><span class="color-swatch" style="background-color: khaki;"></span></label>
+                </div>
+              </div>
+
+              <button class="btn btn-secondary btn-block clear-filters">Clear All Filters</button>
+
+            </div>
+          </aside>
+
+          <div class="collection-main">
+            <div class="collection-toolbar">
+              <div class="toolbar-results">
+            <span class="results-count">Showing 1 product</span>
+              </div>
+              <div class="toolbar-sort">
+                <label>Featured</label>
+              </div>
+            </div>
+
+            <div class="products-grid" data-aos="fade-up">
+              <div class="product-card">
+                <a href="product.html" class="product-card-link">
+                  <div class="product-card-image">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop" alt="MotionFit™ Formal Trouser">
+                    <div class="product-badges">
+                      <span class="badge badge-sale">-40%</span>
+                    </div>
+                  </div>
+                  <div class="product-card-info">
+                    <h3 class="product-card-title">MotionFit™ Formal Trouser</h3>
+                    <div class="product-card-price">
+                      <span class="price-compare">₹1,999</span>
+                      <span class="price-current">₹1,199</span>
+                    </div>
+                  </div>
+                </a>
+                <form method="post" action="#" class="product-card-atc-form">
+                  <input type="hidden" name="id" value="1001-32">
+                  <button class="btn btn-primary btn-sm product-card-atc" type="submit">
+                    Add to Cart
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-overlay"></div>
+
+    <section class="size-guide-cta-section">
+      <div class="container">
+        <div class="size-guide-cta-content">
+          <div class="size-guide-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+
+          <h2 class="size-guide-cta-heading">Need Help Finding Your Perfect Fit?</h2>
+          <p class="size-guide-cta-subheading">
+            Get the right size every time with our comprehensive size guide. Measure once, order confidently!
+          </p>
+
+          <div class="size-guide-cta-buttons">
+            <a href="pages/size-guide.html" class="size-guide-btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3z"/>
+                <path d="M3 9h18"/>
+                <path d="M9 21V9"/>
+              </svg>
+              View Size Guide
+            </a>
+            <a href="https://wa.me/919462968539" class="size-guide-btn-secondary" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Chat with Us
+            </a>
+          </div>
+
+          <div class="size-guide-features">
+            <div class="size-guide-feature">
+              <div class="size-guide-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <h4 class="size-guide-feature-title">Quick & Easy</h4>
+              <p class="size-guide-feature-text">Simple measurements in under 2 minutes</p>
+            </div>
+            <div class="size-guide-feature">
+              <div class="size-guide-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h4 class="size-guide-feature-title">Perfect Fit</h4>
+              <p class="size-guide-feature-text">Guaranteed perfect fit or free exchange</p>
+            </div>
+            <div class="size-guide-feature">
+              <div class="size-guide-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h4 class="size-guide-feature-title">Expert Help</h4>
+              <p class="size-guide-feature-text">WhatsApp support available 24/7</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-content">
+      <form action="#" method="get" role="search">
+        <input type="text" name="q" placeholder="Search products..." aria-label="Search">
+        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+      </form>
+      <button class="search-overlay-close" aria-label="Close search">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="search-overlay-backdrop" id="search-overlay-backdrop"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3>My Bag</h3>
+      <button class="cart-drawer-close" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body" data-cart-drawer-body>
+            <div class="cart-drawer-item">
+              <div class="cart-drawer-item-image">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&h=240&fit=crop" alt="MotionFit Trouser">
+              </div>
+              <div class="cart-drawer-item-info">
+                <p class="cart-drawer-item-title">MotionFit™ Formal Trouser</p>
+                <p class="cart-drawer-item-meta">Size 32 · Black</p>
+                <p class="cart-drawer-item-price">₹1,199</p>
+              </div>
+              <span class="cart-drawer-item-qty">1</span>
+            </div>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-subtotal">
+        <span>Subtotal</span>
+              <strong data-cart-drawer-subtotal>₹1,199</strong>
+      </div>
+      <a href="cart.html" class="btn btn-secondary btn-block">View Cart</a>
+      <a href="#" class="btn btn-primary btn-block">Checkout</a>
+    </div>
+  </div>
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+
+          <div class="footer-col footer-brand">
+            <h3 class="footer-logo">R2F</h3>
+            <p class="footer-tagline">Perfect Fit Perfect You</p>
+            <p class="footer-description">Premium trousers engineered for Indian men who demand the perfect fit.</p>
+            <p class="footer-description">Support: +91 94629 68539<br>r2f.helpdesk@gmail.com</p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/r2fwear/" target="_blank" class="social-link" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/r2fwear" target="_blank" class="social-link" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col footer-collapsible">
+            <h4 class="footer-heading footer-toggle">
+              <span>MENU</span>
+              <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </h4>
+            <ul class="footer-links footer-dropdown">
+              <li><a href="product.html">MotionFit™ Trouser</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-collapsible">
+            <h4 class="footer-heading footer-toggle">
+              <span>STORE POLICIES</span>
+              <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </h4>
+            <ul class="footer-links footer-dropdown">
+              <li><a href="pages/size-guide.html">Size Guide</a></li>
+              <li><a href="pages/returns.html">Returns & Exchange</a></li>
+              <li><a href="pages/shipping.html">Shipping Policy</a></li>
+              <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-collapsible">
+            <h4 class="footer-heading footer-toggle">
+              <span>IMPORTANT LINK</span>
+              <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </h4>
+            <ul class="footer-links footer-dropdown">
+              <li><a href="pages/about.html">About Us</a></li>
+              <li><a href="pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="pages/terms.html">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">© 2026 R2F - Right2Fit. All rights reserved.</p>
+          <div class="footer-payment">
+            <span class="payment-text">We accept all major payment methods</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/919462968539" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <style>body.page-collection { font-family: 'Jost', sans-serif; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="../assets/script.js"></script>
+  <script src="../assets/premium-features.js"></script>
+</body>
+</html>
+

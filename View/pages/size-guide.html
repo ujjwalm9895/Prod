@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide | R2F - Right2Fit</title>
+    <meta name="description" content="R2F size guide for MotionFit™ trousers. Find your perfect fit with our comprehensive size chart. Waist sizes 28-36, tailored for Indian body types.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/benefits-modern.css">
+    <link rel="stylesheet" href="../../assets/size-guide-cta.css">
+    <link rel="stylesheet" href="../../assets/footer-compact.css">
+    <link rel="stylesheet" href="../../assets/footer-collapsible.css">
+    <link rel="stylesheet" href="../../assets/mobile-menu-enhanced.css">
+    <link rel="stylesheet" href="../../assets/premium-enhancements.css">
+    <link rel="stylesheet" href="../../assets/collection.css">
+    <link rel="stylesheet" href="../../assets/mobile.css">
+    <style>
+      /* Announcement strip: full-width horizontal marquee (right to left) */
+      .announcement-strip { width: 100%; overflow: hidden; background: #0a0a0a; white-space: nowrap; position: relative; z-index: 1000; }
+      .announcement-strip__track { display: inline-flex; animation: announcement-marquee 30s linear infinite; animation-iteration-count: infinite; contain: layout; }
+      .announcement-strip__segment { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.5rem; color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; flex-shrink: 0; }
+      .announcement-strip__segment--blue { background: #0a0a0a; }
+      .announcement-strip__segment--black { background: #000; }
+      .announcement-strip__segment--black span { font-weight: 700; }
+      .announcement-strip__segment--emphasis span { font-weight: 700; }
+      .announcement-strip__icon { flex-shrink: 0; color: #facc15; }
+      @keyframes announcement-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      body.page-size-guide { font-family: 'Jost', sans-serif; }
+      .size-guide-hero {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .size-guide-hero-heading { margin: 0.5rem 0 1rem; font-size: clamp(1.9rem, 4.2vw, 2.5rem); line-height: 1.2; color: #f8f6f2; }
+      .size-guide-hero-desc { color: #dcd6cc; font-size: 1rem; line-height: 1.6; }
+      .policy-page .hero-section { padding: 2.5rem 0 1.5rem; background: linear-gradient(135deg, rgba(0,0,0,0.82), rgba(0,0,0,0.72)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1600&auto=format&fit=crop') center/cover no-repeat; }
+      .size-guide-hero .hero-subheading { color: #c49a6c; }
+      .size-guide-content { padding: 2rem 0 3rem; background: #fff; }
+      .size-guide-content-wrapper { max-width: 900px; margin: 0 auto; padding: 0 1rem; }
+      .size-guide-section { margin-bottom: 3rem; text-align: center; }
+      .size-guide-section:last-of-type { margin-bottom: 0; }
+      .size-guide-section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.75rem; color: #111; }
+      .size-guide-table-wrapper { overflow-x: auto; margin: 2rem 0; -webkit-overflow-scrolling: touch; }
+      .size-guide-table { width: 100%; border-collapse: collapse; min-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; }
+      .size-guide-table th { background: #111; color: #fff; padding: 1rem 1.25rem; text-align: center; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
+      .size-guide-table th:first-child { text-align: left; }
+      .size-guide-table td { padding: 1rem 1.25rem; border-bottom: 1px solid #e5e5e5; text-align: center; color: #333; font-size: 0.95rem; }
+      .size-guide-table td:first-child { text-align: left; font-weight: 600; color: #111; }
+      .size-guide-table tbody tr:last-child td { border-bottom: none; }
+      .size-guide-table tbody tr:hover { background: #f8f6f2; transition: background 0.2s ease; }
+      .size-guide-instructions { background: #f8f6f2; padding: 2rem 1.75rem; border-radius: 12px; margin: 2rem auto; max-width: 700px; text-align: left; }
+      .size-guide-instructions h3 { font-size: 1.25rem; margin-bottom: 1rem; color: #111; font-weight: 700; }
+      .size-guide-instructions ol { margin-left: 1.5rem; padding-left: 0.5rem; }
+      .size-guide-instructions li { margin-bottom: 0.875rem; color: #444; line-height: 1.7; font-size: 1rem; }
+      .size-guide-instructions li:last-child { margin-bottom: 0; }
+      .size-guide-instructions p { color: #666; font-size: 0.95rem; line-height: 1.7; margin-top: 1rem; }
+      .size-guide-section .brand-story-content { margin-bottom: 2rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
+      .size-guide-section .brand-story-content:last-of-type { margin-bottom: 0; }
+      .size-guide-section .brand-story-title { font-size: 1.35rem; margin-bottom: 1rem; color: #111; font-weight: 700; }
+      .size-guide-section .brand-story-content ul { list-style: none; padding-left: 0; }
+      .size-guide-section .brand-story-content ul li { margin-bottom: 0.75rem; color: #333; line-height: 1.7; font-size: 1rem; padding-left: 1.5rem; position: relative; }
+      .size-guide-section .brand-story-content ul li:before { content: "•"; position: absolute; left: 0; color: #c49a6c; font-weight: bold; font-size: 1.2rem; }
+      .size-guide-section .brand-story-content ul li:last-child { margin-bottom: 0; }
+      .size-guide-section .brand-story-content p { color: #333; line-height: 1.7; margin-bottom: 1rem; font-size: 1rem; }
+      .size-guide-section .brand-story-content a { color: #111; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+      .size-guide-section .brand-story-content a:hover { color: #c49a6c; text-decoration: underline; }
+      .size-guide-section .btn { margin-top: 1rem; }
+      .size-guide-section .btn-primary {
+        background-color: #C49A6C;
+        border-color: #C49A6C;
+        color: #fff;
+      }
+      .size-guide-section .btn-primary:hover {
+        background-color: #b8860b;
+        border-color: #b8860b;
+        color: #fff;
+      }
+      @media (max-width: 768px) {
+        .policy-page .hero-section { padding: 2rem 0 1.4rem !important; }
+        .size-guide-content-wrapper { padding: 0 0.75rem; }
+        .size-guide-section { margin-bottom: 2.5rem; }
+        .size-guide-section-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .size-guide-table-wrapper { margin: 1.5rem -0.75rem; }
+        .size-guide-table { min-width: 550px; font-size: 0.9rem; }
+        .size-guide-table th, .size-guide-table td { padding: 0.875rem 1rem; }
+        .size-guide-instructions { padding: 1.5rem 1.25rem; margin: 1.5rem auto; }
+        .size-guide-instructions h3 { font-size: 1.15rem; }
+        .size-guide-instructions li { font-size: 0.95rem; }
+        .size-guide-section .brand-story-content { padding: 0 0.5rem; }
+        .size-guide-section .brand-story-title { font-size: 1.25rem; }
+        .size-guide-section .brand-story-content ul li { font-size: 0.95rem; }
+        .size-guide-section .brand-story-content p { font-size: 0.95rem; }
+      }
+      @media (max-width: 640px) {
+        .size-guide-hero-heading { font-size: 1.7rem; line-height: 1.25; }
+        .size-guide-hero-desc { font-size: 0.98rem; line-height: 1.55; }
+        .size-guide-section-title { font-size: 1.35rem; }
+        .size-guide-table { min-width: 500px; }
+        .size-guide-table th, .size-guide-table td { padding: 0.75rem 0.875rem; font-size: 0.85rem; }
+      }
+    </style>
+  </head>
+  <body class="page-size-guide">
+    <!-- Announcement Strip -->
+    <div class="announcement-strip" aria-live="polite">
+      <div class="announcement-strip__track">
+        <div class="announcement-strip__segment announcement-strip__segment--blue">
+          <svg class="announcement-strip__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2L7 10h3v8l4-8h-3V2z"/></svg>
+          <span>₹200 Instant Discount on Prepaid Orders</span>
+        </div>
+        <div class="announcement-strip__segment announcement-strip__segment--black"><span>Free PAN India Shipping</span></div>
+        <div class="announcement-strip__segment announcement-strip__segment--blue announcement-strip__segment--emphasis"><span>Easy Size Exchange</span></div>
+        <div class="announcement-strip__segment announcement-strip__segment--blue">
+          <svg class="announcement-strip__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 2L7 10h3v8l4-8h-3V2z"/></svg>
+          <span>₹200 Instant Discount on Prepaid Orders</span>
+        </div>
+        <div class="announcement-strip__segment announcement-strip__segment--black"><span>Free PAN India Shipping</span></div>
+        <div class="announcement-strip__segment announcement-strip__segment--blue announcement-strip__segment--emphasis"><span>Easy Size Exchange</span></div>
+      </div>
+    </div>
+    <header class="site-header sticky-header">
+      <!-- Announcement Bar -->
+      <div class="announcement-bar">
+        <div class="container">
+          <div class="announcement-slider" aria-live="polite">
+            <div class="announcement-slide">₹200 Instant Discount on Prepaid Orders</div>
+            <div class="announcement-slide">Free PAN India Shipping</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Header -->
+      <div class="header-main">
+        <div class="container">
+          <div class="header-content">
+            
+            <!-- Mobile Menu Toggle -->
+              <button class="mobile-menu-toggle" aria-label="Open menu">
+                <span class="hamburger">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h10"></path>
+                  </svg>
+                </span>
+              </button>
+
+            <!-- Logo -->
+            <div class="header-logo">
+              <a href="../index.html" class="logo-link">
+                <img src="../../assets/r2f-logo.png" alt="R2F - Right2Fit" class="logo-img">
+              </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="header-nav desktop-nav">
+              <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../product.html" class="nav-link">MotionFit™</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="size-guide.html" class="nav-link">Size Guide</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+              <a href="#" class="header-icon" aria-label="Search">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM18 18l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </a>
+              <a href="cart.html" class="header-icon" aria-label="Cart">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M5 1v2M1 4h18l-1.5 9H4.5L3 4M7 8v6M11 8v6M15 8v6M7 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM15 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <div class="mobile-nav-header">
+          <h3 class="mobile-nav-title">Menu</h3>
+          <button class="mobile-nav-close" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mobile-nav-content">
+          
+          <!-- Menu Panel -->
+          <div class="mobile-nav-panel active" data-panel="menu">
+            <ul class="mobile-nav-list">
+              <li class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link">Home</a></li>
+              <li class="mobile-nav-item"><a href="../product.html" class="mobile-nav-link">MotionFit™</a></li>
+              <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+              <li class="mobile-nav-item"><a href="size-guide.html" class="mobile-nav-link">Size Guide</a></li>
+              <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="mobile-nav-panel" data-panel="categories">
+          <div class="mobile-categories-grid">
+            <a href="../product.html" class="mobile-category-product">
+              <div class="mobile-category-product__info">
+                <span class="mobile-category-product__title">MotionFit™ Formal Trouser</span>
+                    <span class="mobile-category-product__chevron">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 6l6 6-6 6"/>
+                      </svg>
+                    </span>
+              </div>
+            </a>
+          </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="mobile-nav-overlay"></div>
+    </header>
+    <main>
+      <div class="policy-page">
+        <section class="hero-section" style="padding: 2.5rem 0 1.5rem; background: linear-gradient(135deg, rgba(0,0,0,0.82), rgba(0,0,0,0.72)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1600&auto=format&fit=crop') center/cover no-repeat;">
+          <div class="container">
+            <div class="hero-content size-guide-hero">
+              <p class="hero-subheading" style="font-weight: 600; letter-spacing: 0.04em;">Size Guide</p>
+              <h1 class="hero-heading size-guide-hero-heading">Find Your Perfect Fit</h1>
+              <p class="hero-description size-guide-hero-desc">Measure once, order confidently. Our MotionFit™ trousers are tailored for Indian body types.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="size-guide-content">
+          <div class="container">
+            <div class="size-guide-content-wrapper">
+              <div class="size-guide-section">
+              <h2 class="size-guide-section-title">How to Measure</h2>
+              <div class="size-guide-instructions">
+                <h3>Measurement Guide</h3>
+                <ol>
+                  <li><strong>Waist:</strong> Measure around your natural waistline (usually just above your belly button). Keep the tape snug but not tight.</li>
+                  <li><strong>Hip:</strong> Measure around the fullest part of your hips, keeping the tape parallel to the floor.</li>
+                  <li><strong>Thigh:</strong> Measure around the fullest part of your thigh, typically about 2-3 inches below your crotch.</li>
+                  <li><strong>Length:</strong> Measure from the top of the waistband to the desired hem length (standard is 40 inches).</li>
+                  <li><strong>Bottom:</strong> Measure the leg opening width at the bottom hem.</li>
+                </ol>
+                <p style="margin-top: 1rem; color: #666; font-size: 0.95rem;"><strong>Tip:</strong> Use a flexible measuring tape and measure over light clothing. If you're between sizes, we recommend sizing up for a more comfortable fit.</p>
+              </div>
+            </div>
+
+            <div class="size-guide-section">
+              <h2 class="size-guide-section-title">Size Chart</h2>
+              <div class="size-guide-table-wrapper">
+                <table class="size-guide-table">
+                  <thead>
+                    <tr>
+                      <th>Size</th>
+                      <th>Waist (inches)</th>
+                      <th>Length (inches)</th>
+                      <th>Hip (inches)</th>
+                      <th>Thigh (inches)</th>
+                      <th>Bottom (inches)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>28</td>
+                      <td>29"</td>
+                      <td>40"</td>
+                      <td>34"</td>
+                      <td>22"</td>
+                      <td>13"</td>
+                    </tr>
+                    <tr>
+                      <td>30</td>
+                      <td>31"</td>
+                      <td>40"</td>
+                      <td>36"</td>
+                      <td>23"</td>
+                      <td>14"</td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+                      <td>33"</td>
+                      <td>40"</td>
+                      <td>38"</td>
+                      <td>24"</td>
+                      <td>14½"</td>
+                    </tr>
+                    <tr>
+                      <td>34</td>
+                      <td>35"</td>
+                      <td>40"</td>
+                      <td>40"</td>
+                      <td>25"</td>
+                      <td>15"</td>
+                    </tr>
+                    <tr>
+                      <td>36</td>
+                      <td>37"</td>
+                      <td>40"</td>
+                      <td>42"</td>
+                      <td>25½"</td>
+                      <td>15¾"</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="size-guide-section">
+              <h2 class="size-guide-section-title">Fit Details</h2>
+              <div class="brand-story-content">
+                <h3 class="brand-story-title">Slim Fit</h3>
+                <ul>
+                  <li>Trimmer through the hips and seat</li>
+                  <li>Standard leg opening</li>
+                  <li>Mid-rise waistband</li>
+                  <li>2-way stretch for comfort</li>
+                </ul>
+              </div>
+              <div class="brand-story-content">
+                <h3 class="brand-story-title">Length</h3>
+                <ul>
+                  <li>Standard length fits most heights</li>
+                  <li>Designed to sit just above the shoe</li>
+                  <li>Can be hemmed if needed</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="size-guide-section">
+              <h2 class="size-guide-section-title">Still Not Sure?</h2>
+              <div class="brand-story-content">
+                <p>Our team is here to help you find the perfect size. Reach out to us:</p>
+                <p style="margin-top: 1rem;">
+                  <strong>Email:</strong> <a href="mailto:r2f.helpdesk@gmail.com">r2f.helpdesk@gmail.com</a><br>
+                  <strong>WhatsApp:</strong> <a href="https://wa.me/919462968539" target="_blank">+91 94629 68539</a>
+                </p>
+                <p style="margin-top: 1rem;">
+                  <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            
+            <div class="footer-col footer-brand">
+              <h3 class="footer-logo">R2F</h3>
+              <p class="footer-tagline">Perfect Fit Perfect You</p>
+              <p class="footer-description">Premium trousers engineered for Indian men who demand the perfect fit.</p>
+              <p class="footer-description">Support: +91 94629 68539<br>r2f.helpdesk@gmail.com</p>
+                <div class="footer-social">
+                  <a href="https://www.instagram.com/r2fwear/" target="_blank" class="social-link" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.facebook.com/r2fwear" target="_blank" class="social-link" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                  </a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-collapsible">
+              <h4 class="footer-heading footer-toggle">
+                <span>MENU</span>
+                <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </h4>
+              <ul class="footer-links footer-dropdown">
+                <li><a href="../product.html">MotionFit™ Trouser</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col footer-collapsible">
+              <h4 class="footer-heading footer-toggle">
+                <span>STORE POLICIES</span>
+                <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </h4>
+              <ul class="footer-links footer-dropdown">
+                <li><a href="size-guide.html">Size Guide</a></li>
+                <li><a href="returns.html">Returns & Exchange</a></li>
+                <li><a href="shipping.html">Shipping Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col footer-collapsible">
+              <h4 class="footer-heading footer-toggle">
+                <span>IMPORTANT LINK</span>
+                <svg class="footer-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </h4>
+              <ul class="footer-links footer-dropdown">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p class="footer-copyright">© 2026 R2F - Right2Fit. All rights reserved.</p>
+            <div class="footer-payment">
+              <span class="payment-text">We accept all major payment methods</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919462968539" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+      </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../../assets/script.js"></script>
+    <script src="../../assets/premium-features.js"></script>
+  </body>
+</html>

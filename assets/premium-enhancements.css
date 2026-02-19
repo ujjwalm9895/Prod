@@ -1,0 +1,618 @@
+/* ============================================
+   Premium Website Enhancements
+   Luxury E-commerce Experience
+   ============================================ */
+
+/* ============================================
+   SMOOTH PAGE TRANSITIONS
+   ============================================ */
+
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.page-transition.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-transition-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   PREMIUM HEADER ENHANCEMENTS
+   ============================================ */
+
+/* Mega Menu Dropdown */
+.header-nav .nav-list > li {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #ffffff;
+  min-width: 800px;
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.header-nav .nav-list > li:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: all;
+}
+
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.mega-menu-column h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.mega-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-menu-links li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.mega-menu-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  color: #666666;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.mega-menu-links a:hover {
+  color: var(--color-gold);
+  transform: translateX(5px);
+}
+
+.mega-menu-links a::before {
+  content: '→';
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.mega-menu-links a:hover::before {
+  opacity: 1;
+}
+
+/* ============================================
+   FLOATING QUICK VIEW
+   ============================================ */
+
+.quick-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  padding: var(--spacing-lg);
+}
+
+.quick-view-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quick-view-content {
+  background: #ffffff;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transform: scale(0.9) translateY(50px);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.quick-view-modal.active .quick-view-content {
+  transform: scale(1) translateY(0);
+}
+
+.quick-view-close {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  z-index: 10001;
+}
+
+.quick-view-close:hover {
+  background: var(--color-gold);
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   PREMIUM PRODUCT CARDS
+   ============================================ */
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card-badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  background: var(--color-gold);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  animation: slideInLeft 0.5s ease;
+}
+
+.product-card-actions {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.product-card:hover .product-card-actions {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.product-action-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-action-btn:hover {
+  background: var(--color-gold);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.product-action-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.product-card-quick-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: var(--spacing-sm);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover .product-card-quick-view {
+  transform: translateY(0);
+}
+
+/* ============================================
+   ANIMATED SCROLL INDICATORS
+   ============================================ */
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(196, 154, 108, 0.2);
+  z-index: 9999;
+}
+
+.scroll-indicator-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold) 0%, #d4aa7c 100%);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: var(--spacing-lg);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #d4aa7c 100%);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(196, 154, 108, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9998;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(196, 154, 108, 0.5);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+/* ============================================
+   NOTIFICATION TOAST
+   ============================================ */
+
+.notification-toast {
+  position: fixed;
+  top: 100px;
+  right: var(--spacing-lg);
+  background: #ffffff;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 300px;
+  transform: translateX(400px);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 10002;
+}
+
+.notification-toast.show {
+  transform: translateX(0);
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notification-icon.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.notification-icon.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.notification-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.notification-content p {
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* ============================================
+   PREMIUM LOADING ANIMATION
+   ============================================ */
+
+.premium-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.premium-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInUp 0.8s ease;
+}
+
+.loader-bar {
+  width: 200px;
+  height: 3px;
+  background: rgba(196, 154, 108, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-gold) 0%, #d4aa7c 100%);
+  width: 0%;
+  animation: loadingBar 2s ease-in-out;
+}
+
+@keyframes loadingBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ============================================
+   PARALLAX EFFECTS
+   ============================================ */
+
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+/* ============================================
+   ANIMATED COUNTERS
+   ============================================ */
+
+.stat-counter {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+/* ============================================
+   PREMIUM ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .mega-menu {
+    display: none;
+  }
+  
+  .back-to-top {
+    bottom: 80px;
+    right: var(--spacing-md);
+    width: 45px;
+    height: 45px;
+  }
+  
+  .notification-toast {
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+    min-width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .loader-logo {
+    font-size: 2rem;
+  }
+  
+  .page-transition-logo {
+    font-size: 2rem;
+  }
+}
+
