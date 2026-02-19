@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Theme",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_name",
+        "label": "Store Name",
+        "default": "R2F - Right2Fit"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#C9A24D"
+      }
+    ]
+  }
+]

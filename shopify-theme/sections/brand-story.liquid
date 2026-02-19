@@ -33,6 +33,8 @@
           <img 
             src="{{ section.settings.image | image_url: width: 800 }}" 
             alt="{{ section.settings.image.alt | default: section.settings.title }}"
+            width="800"
+            height="600"
             loading="lazy"
           >
         {% endif %}
